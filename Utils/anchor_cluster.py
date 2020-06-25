@@ -117,7 +117,9 @@ def voc_demision_cluster():
     print("Ratios:\n {}".format(sorted(ratios)))
 
 if __name__ == '__main__':
-    with open('D:/coursera/YoLoSerirs/data/fddb_face_train.txt', 'r') as f:
+    import matplotlib.pyplot as plt
+
+    with open('D:/coursera/YoLoSerirs_Project/data/fddb_face_train.txt', 'r') as f:
         data = f.readlines()
 
     boxes = []
@@ -137,7 +139,7 @@ if __name__ == '__main__':
 
     out = kmeans(boxes, k=9)
     print("Accuracy: {:.2f}%".format(avg_iou(boxes, out) * 100))
-    print((out * 416).astype(np.int))
+    print((out * 320).astype(np.int))
     # print("Boxes:\n {}-{}".format(out[:, 0] * 416, out[:, 1] * 416))
 
     ratios = np.around(out[:, 0] / out[:, 1], decimals=2).tolist()

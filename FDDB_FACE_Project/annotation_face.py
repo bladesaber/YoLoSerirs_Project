@@ -5,7 +5,7 @@ import cv2
 annotion_dir = 'D:/DataSet/rebuild/FDDB_folds'
 img_root = 'D:/DataSet/rebuild/'
 
-output_file = 'D:\\coursera\\YoLoSerirs\\data\\fddb_face_train.txt'
+output_file = 'D:\\coursera\\YoLoSerirs_Project\\data\\fddb_face_train.txt'
 
 annotion_list = os.listdir(annotion_dir)
 annotion_files = []
@@ -21,6 +21,7 @@ with open(output_file, 'w') as f:
         state = 0
         img_path = ''
         bbox = []
+        width, height = 1, 1
 
         for line in data:
             line = line.strip()
@@ -33,6 +34,12 @@ with open(output_file, 'w') as f:
                     img_path = ''
 
                 img_path = img_root+line+'.jpg'
+
+                if os.path.exists(img_path):
+                    height_v, width_v, channel = (cv2.imread(img_path)).shape
+                    width = width_v
+                    height = height_v
+
                 state = 1
 
             elif state==1:
@@ -41,9 +48,14 @@ with open(output_file, 'w') as f:
 
             elif state == 2:
                 ry, rw, _, xcenter, ycenter, _, _ = line.split(' ')
-                ry, rw, xcenter, ycenter = int(float(ry)*1.1), int(float(rw)*1.1), int(float(xcenter)), int(float(ycenter))
-                bbox.append(','.join([str(xcenter-rw), str(ycenter-ry),
-                                      str(xcenter+rw), str(ycenter+ry), '0']))
+                ry, rw, xcenter, ycenter = int(float(ry)*1.0), int(float(rw)*1.0), int(float(xcenter)), int(float(ycenter))
+
+                xmin = max(xcenter-rw, 0)
+                ymin = max(ycenter-ry, 0)
+                xmax = min(xcenter+rw, width)
+                ymax = min(ycenter+ry, height)
+
+                bbox.append(','.join([str(xmin), str(ymin), str(xmax), str(ymax), '0']))
 
         if os.path.exists(img_path):
             f.write(img_path + ' ' + ' '.join(bbox) + '\n')

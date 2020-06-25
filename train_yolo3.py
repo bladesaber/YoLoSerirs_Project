@@ -9,8 +9,19 @@ from model import ops
 import os
 from tqdm import tqdm
 
-def train(model_name, weight_path, save_path, stage):
-    assert model_name in ['yolov3', 'yolov4']
+'''
+last: 0.0002 2 times
+last: 0.0001 2 times
+all: 0.0001 2 times
+all: 0.00002 3 times
+all: 0.00001 2 times
+'''
+
+avg_giou_loss = []
+avg_conf_loss = []
+
+def train(model_name, weight_path, save_path, stage, learn_rate, epochs, use_self_npy):
+    assert model_name in ['yolov3']
 
     physical_devices = tf.config.experimental.list_physical_devices('GPU')
     if len(physical_devices) > 0:
@@ -26,7 +37,6 @@ def train(model_name, weight_path, save_path, stage):
 
     isfreeze = False
     steps_per_epoch = len(trainset)
-    epochs = cfg.TRAIN.EPOCHS
 
     global_steps = tf.Variable(1, trainable=False, dtype=tf.int64)
     total_steps = epochs * steps_per_epoch
@@ -43,14 +53,24 @@ def train(model_name, weight_path, save_path, stage):
 
 
     if weight_path:
-        final_layers = utils.load_weights_v3_npy(model, weight_path, exclude=True)
+        if use_self_npy:
+            weight = np.load(weight_path, allow_pickle=True)
+            model.set_weights(weight)
+            final_layers = []
+        else:
+            final_layers = utils.load_weights_v3_npy(model, weight_path, exclude=True)
         print('Restoring weights from: %s ... ' % weight_path)
     else:
         final_layers = []
 
-    optimizer = tf.keras.optimizers.Adam()
+    optimizer = tf.keras.optimizers.Adam(learn_rate)
+
+    avg_giou_loss = []
+    avg_conf_loss = []
 
     def train_step(image_data, target):
+        global avg_giou_loss, avg_conf_loss
+
         with tf.GradientTape() as tape:
             pred_result = model(image_data, training=True)
             giou_loss = conf_loss = prob_loss = 0
@@ -69,22 +89,28 @@ def train(model_name, weight_path, save_path, stage):
             gradients = tape.gradient(total_loss, model.trainable_variables)
             optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 
-            # tf.print("=> STEP %4d   lr: %.6f   giou_loss: %4.2f   conf_loss: %4.2f   "
-            #          "prob_loss: %4.2f   total_loss: %4.2f" % (global_steps, optimizer.lr.numpy(),
-            #                                                    giou_loss, conf_loss,
-            #                                                    prob_loss, total_loss))
+            avg_giou_loss.append(giou_loss)
+            avg_conf_loss.append(conf_loss)
+
+            if global_steps%10==0:
+                tf.print("=> STEP %4d   lr: %.6f   giou_loss: %4.2f   conf_loss: %4.2f   "
+                         "prob_loss: %4.2f   total_loss: %4.2f" % (global_steps, optimizer.lr.numpy(),
+                                                                   np.mean(avg_giou_loss), np.mean(avg_conf_loss),
+                                                                   prob_loss, total_loss))
+                avg_giou_loss = []
+                avg_conf_loss = []
 
             global_steps.assign_add(1)
 
     if stage=='last':
         for layer in model.layers:
-            if layer.name not in final_layers:
+            if layer.name not in ['conv2d_74', 'conv2d_66', 'conv2d_58']:
                 layer.trainable = False
             else:
                 print(layer.name)
 
     for epoch in range(epochs):
-        for image_data, target in tqdm(trainset):
+        for image_data, target in trainset:
             train_step(image_data, target)
 
         if save_path:
@@ -93,4 +119,4 @@ def train(model_name, weight_path, save_path, stage):
 
 if __name__ == '__main__':
     train(model_name='yolov3', weight_path='D:/coursera/YoLoSerirs/pretrain/yolov3.npy',
-          save_path='D:\coursera\YoLoSerirs\checkpoint\yolo3_fddb.npy', stage='last')
+          save_path='D:\coursera\YoLoSerirs\checkpoint\yolo3_fddb.npy', stage='last', learn_rate=0.001, epochs=1, use_self_npy=False)

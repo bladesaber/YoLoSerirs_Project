@@ -12,7 +12,7 @@ def draw_box(img, bboxs):
 
     plt.show()
 
-with open('D:\\coursera\\YoLoSerirs\\data\\fddb_face_train.txt', 'r') as f:
+with open('D:\\coursera\\YoLoSerirs_Project\\data\\fddb_face_train.txt', 'r') as f:
     data = f.readlines()
 
 for line in data:

@@ -249,6 +249,33 @@ class General_Dataset(object):
         return self.num_batchs
 
 if __name__ == '__main__':
-    from Config.fddbConfig import cfg
+    # from Config.fddbConfig import cfg
+    # dataset = General_Dataset('train', cfg=cfg)
+    # next(dataset)
+
+    import matplotlib.pyplot as plt
+    from Config.config import cfg
+
+    txt = 'D:/DataSet/rebuild/2002/08/24/big/img_490.jpg 110,24,180,132,0'
+    cells = txt.split(' ')
+    img_path = cells[0]
+    boxes = []
+    for cell in cells[1:]:
+        xmin, ymin, xmax, ymax, label = cell.split(',')
+        xmin, ymin, xmax, ymax, label = int(xmin), int(ymin), int(xmax), int(ymax), int(label)
+        boxes.append([xmin, ymin, xmax, ymax])
+    boxes = np.array(boxes)
+
+    # img = cv2.imread('D:\\coursera\\YoLoSerirs_Project\\dataset\\val\\3.jpg')
+    img = cv2.imread(img_path)
+
     dataset = General_Dataset('train', cfg=cfg)
-    next(dataset)
+
+    img, boxes = dataset.random_crop(img, boxes)
+    # img, boxes = dataset.random_horizontal_flip(img, boxes)
+    # img, boxes = dataset.random_translate(img, boxes)
+
+    img_pad, bboxes = utils.image_preprocess(img, target_size=[416, 416], gt_boxes=boxes)
+
+    plt.imshow(img_pad)
+    plt.show()

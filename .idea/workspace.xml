@@ -17,13 +17,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7d8c2b9-84d5-4d14-b321-fa83a92f4f5d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FDDB_FACE_Project/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/val/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataset/val/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yolo3_detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/YoLoSerirs_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/YoLoSerirs_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YoLoSerirs.7z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/fddbConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config/fddbConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FDDB_FACE_Project/annotation_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/FDDB_FACE_Project/annotation_face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample/fddb_face_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/FDDB_FACE_Project/fddb_face_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainTab.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/anchor_cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/anchor_cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/General_DataSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/General_DataSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/anchors/fddb_anchors.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/anchors/fddb_anchors.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/fddb_face_train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/fddb_face_train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_yolo3.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_yolo3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +58,133 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dataset/val" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\coursera\YoLoSerirs_Project\dataset\val" />
+      <recent name="D:\coursera\YoLoSerirs_Project" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\coursera\YoLoSerirs_Project\FDDB_FACE_Project" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.yolo3_detect">
+    <configuration name="General_DataSet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YoLoSerirs_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/General_DataSet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="anchor_cluster" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YoLoSerirs_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Utils/anchor_cluster.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fddb_face_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YoLoSerirs_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FDDB_FACE_Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FDDB_FACE_Project/fddb_face_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YoLoSerirs_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FDDB_FACE_Project" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FDDB_FACE_Project/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="yolo3_detect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="YoLoSerirs_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yolo3_detect.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.yolo3_detect" />
+        <item itemvalue="Python.anchor_cluster" />
+        <item itemvalue="Python.General_DataSet" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.fddb_face_test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -74,6 +221,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -81,21 +229,41 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="309" key="Github.ShareDialog" timestamp="1592967654626">
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593005307074">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="612" y="309" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1592967654626" />
-    <state x="596" y="118" key="Github.UntrackedFilesDialog" timestamp="1592967677216">
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1593005307074" />
+    <state x="612" y="309" key="Github.ShareDialog" timestamp="1592968241610">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="596" y="118" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1592967677216" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1592968184359">
+    <state x="612" y="309" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1592968241610" />
+    <state x="596" y="118" key="Github.UntrackedFilesDialog" timestamp="1592968278273">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592968184359" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1592968104184">
+    <state x="596" y="118" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1592968278273" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1593008501415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592968104184" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593008501415" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1593008501415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593008501415" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1593008501415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593008501415" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1593008501415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593008501415" />
+    <state x="270" y="56" key="SettingsEditor" timestamp="1592969328361">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592969328361" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1592968462516">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592968462516" />
   </component>
 </project>
